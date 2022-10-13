@@ -2,5 +2,88 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
+body {
+    background-color: #000000;
+}
+
+/*---------- HEADER ----------*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 80px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*---------- SCORE SECTION ----------*/
+.score-display {
+    display: flex;
+    justify-content: center;
+}
+
+.score-display p:first-child {
+    margin-right: 40px;
+}
+
+.score-display p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/*---------- SCORE SECTION ----------*/
+.main-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid white;
+    height: 30vh;
+    margin: 60px 300px;
+}
+
+.main-display p {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/*---------- BUTTONS ----------*/
+.main-button {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+button {
+    width: 250px;
+    height: 100px;
+    border: 2px solid rgb(46, 46, 46);
+    border-radius: 10px;
+    background-color: #000000;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 900;
+    margin-right: 40px;
+}
+
+button:last-child {
+    margin-right: 0px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
