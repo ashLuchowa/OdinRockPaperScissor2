@@ -11,24 +11,33 @@
 
 <body>
 
-    <header>
-        <h1>Rock | Paper | Scissor</h1>
-    </header>
+    <div class="container">
 
-    <div class="score-display">
-        <p>player - 0</p>
-        <p>computer - 0</p>
-    </div> <!-- score-display -->
+        <div class="score-display">
+            <div class="player-display">
+                <p>player <span>0</span></p>
+            </div> <!-- player-display-->
 
-    <div class="main-display">
-        <p>which one will you choose?</p>
-    </div> <!-- main-display -->
+            <div class="computer-display">
+                <p>computer <span>0</span></p>
+            </div> <!-- computer-display-->
+        </div> <!-- score-display -->
 
-    <div class="main-button">
-        <button>rock</button>
-        <button>paper</button>
-        <button>scissor</button>
-    </div> <!-- main-button -->
+
+        <div class="bottom-section">
+            <div class="main-button">
+                <button>rock</button>
+                <button>paper</button>
+                <button>scissor</button>
+            </div> <!-- main-button -->
+
+            <div class="main-display">
+                <p>Choose your destiny</p>
+            </div> <!-- main-display -->
+        </div> <!-- bottom-section -->
+
+
+    </div> <!-- container -->
 
     <script href="main.js"></script>
 </body>

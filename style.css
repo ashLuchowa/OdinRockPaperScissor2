@@ -1,3 +1,4 @@
+/*---------- GENERAL ----------*/
 * {
     padding: 0;
     margin: 0;
@@ -6,84 +7,94 @@
 }
 
 body {
-    background-color: #000000;
-}
-
-/*---------- HEADER ----------*/
-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+    background-color: #000000;
+    height: 100vh;
 }
 
-header h1 {
-    color: #ffffff;
-    font-size: 80px;
-    text-transform: uppercase;
-    font-weight: bold;
+.container {
+    margin: 200px;
+    padding: 50px;
+    border: 5px solid white;
+    border-radius: 20px;
+    height: 90vh;
+    width: 95vw;
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 }
 
 /*---------- SCORE SECTION ----------*/
 .score-display {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    z-index: 1000;
+    color: #ffffff;
 }
 
-.score-display p:first-child {
-    margin-right: 40px;
+.score-display span {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    margin-left: 7px;
+    padding: 10px;
+    border-radius: 2px;
 }
 
 .score-display p {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ffffff;
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 10px;
+    font-size: 28px;
 }
 
-/*---------- SCORE SECTION ----------*/
+/*---------- BUTTONS ----------*/
+.main-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-right: 40px;
+}
+
+button {
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #000000;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+button:last-child {
+    margin-bottom: 0px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/*---------- DISPLAY SECTION ----------*/
 .main-display {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
     border: 2px solid white;
-    height: 30vh;
-    margin: 60px 300px;
+    height: 400px;
+    width: 500px;
 }
 
 .main-display p {
     color: #ffffff;
     font-size: 20px;
-}
-
-/*---------- BUTTONS ----------*/
-.main-button {
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-}
-
-button {
-    width: 250px;
-    height: 100px;
-    border: 2px solid rgb(46, 46, 46);
-    border-radius: 10px;
-    background-color: #000000;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 900;
-    margin-right: 40px;
-}
-
-button:last-child {
-    margin-right: 0px;
-}
-
-button:hover {
-    background-color: #ffffff;
-    color: #000000;
 }
