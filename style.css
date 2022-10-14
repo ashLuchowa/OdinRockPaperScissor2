@@ -83,12 +83,17 @@ button:hover {
 /*---------- DISPLAY SECTION ----------*/
 .main-display {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
     border: 2px solid white;
     height: 400px;
     width: 500px;
+}
+
+.main-display h2 {
+    color: white;
 }
 
 .main-display p {

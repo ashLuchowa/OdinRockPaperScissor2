@@ -5,6 +5,7 @@ const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorBtn = document.getElementById('scissor-btn');
 const mainDisplay = document.querySelector('.main-display p');
+const winDisplay = document.querySelector('.main-display h2');
 
 mainDisplay.textContent = 'Choose your destiny';
 
@@ -20,11 +21,14 @@ rockBtn.addEventListener('click', () => {
     computerSelection = getComputerChoice[Math.floor(Math.random() * getComputerChoice.length)];
 
     if (computerSelection === 'rock') {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. It\'s a tie!`;
+        winDisplay.textContent = 'It\'s a tie!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection} too.`;
     } else if (computerSelection === 'paper') {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. You lost! Paper wraps rock!`;
+        winDisplay.textContent = 'You lost!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. Paper wraps rock!`;
     } else {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. You won! Rock breaks scissor!`;
+        winDisplay.textContent = 'You won!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. Rock breaks scissor!`;
     }
 })
 //Player selects paper
@@ -33,11 +37,14 @@ paperBtn.addEventListener('click', () => {
     computerSelection = getComputerChoice[Math.floor(Math.random() * getComputerChoice.length)];
 
     if (computerSelection === 'rock') {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. You won! Paper wraps rock!`;
+        winDisplay.textContent = 'You won!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. Paper wraps rock!`;
     } else if (computerSelection === 'paper') {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. It\'s a tie!`;
+        winDisplay.textContent = 'It\'s a tie!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection} too.`;
     } else {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. You lost! Scissor cuts paper!`;
+        winDisplay.textContent = 'You lost!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. Scissor cuts paper!`;
     }
 })
 //Player selects scissor
@@ -46,10 +53,13 @@ scissorBtn.addEventListener('click', () => {
     computerSelection = getComputerChoice[Math.floor(Math.random() * getComputerChoice.length)];
 
     if (computerSelection === 'rock') {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. You lost! Rock breaks scissor!`;
+        winDisplay.textContent = 'You lost!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. Rock breaks scissor!`;
     } else if (computerSelection === 'paper') {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. You won! Scissor cuts paper!`;
+        winDisplay.textContent = 'You won!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. Scissor cuts paper!`;
     } else {
-        mainDisplay.textContent = `The enemy chose ${computerSelection}. It\'s a tie!`;
+        winDisplay.textContent = 'It\'s a tie!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection} too`;
     }
 })
