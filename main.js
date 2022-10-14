@@ -1,20 +1,26 @@
-let playerSelection;
-let computerSelection;
+let pScore = 9;
+let cScore = 10;
+
 const buttons = document.querySelectorAll('.main-button button');
 const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorBtn = document.getElementById('scissor-btn');
 const mainDisplay = document.querySelector('.main-display p');
 const winDisplay = document.querySelector('.main-display h2');
+const computerDisplay = document.querySelector('.computer-display span');
+const playerDisplay = document.querySelector('.player-display span');
+
+computerDisplay.textContent = cScore;
+playerDisplay.textContent = pScore;
 
 mainDisplay.textContent = 'Choose your destiny';
-
 
 //Computer random choice [rock, paper or scissor]
 getComputerChoice = ['rock', 'paper', 'scissor'];
 
 
 //Player select [rock, paper or scissor]
+
 //Player selects rock
 rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
@@ -31,6 +37,7 @@ rockBtn.addEventListener('click', () => {
         mainDisplay.textContent = `The enemy chose ${computerSelection}. Rock breaks scissor!`;
     }
 })
+
 //Player selects paper
 paperBtn.addEventListener('click', () => {
     playerSelection = 'paper';
@@ -47,6 +54,7 @@ paperBtn.addEventListener('click', () => {
         mainDisplay.textContent = `The enemy chose ${computerSelection}. Scissor cuts paper!`;
     }
 })
+
 //Player selects scissor
 scissorBtn.addEventListener('click', () => {
     playerSelection = 'scissor';
