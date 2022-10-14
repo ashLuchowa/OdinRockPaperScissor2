@@ -1,6 +1,7 @@
 //Global variables
 let pScore = 0;
 let cScore = 0;
+let rScore = 0;
 
 //Target variables
 const buttons = document.querySelectorAll('.main-button button');
@@ -53,6 +54,8 @@ const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === computerSelection) {
         winDisplay.textContent = 'It\'s a tie!';
         mainDisplay.textContent = `The enemy chose ${computerSelection} too.`;
+        rScore++;
+        updateScore();
     }
 
     //You win
@@ -63,6 +66,7 @@ const playRound = (playerSelection, computerSelection) => {
         winDisplay.textContent = 'You won!';
         mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         pScore++;
+        rScore++;
         updateScore();
     }
 
@@ -74,6 +78,7 @@ const playRound = (playerSelection, computerSelection) => {
         winDisplay.textContent = 'You lost!';
         mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         cScore++;
+        rScore++;
         updateScore();
     }
 }
@@ -83,6 +88,13 @@ const playRound = (playerSelection, computerSelection) => {
 const updateScore = () => {
     const playerDisplay = document.querySelector('.player-display span');
     const computerDisplay = document.querySelector('.computer-display span');
+    const roundDisplay = document.querySelector('.round-display span');
     playerDisplay.textContent = pScore;
     computerDisplay.textContent = cScore;
+    roundDisplay.textContent = rScore+1;
+
+    if(rScore === 5) {
+        alert('GAME OVER BITCH!')
+        roundDisplay.textContent = rScore;
+    }
 }
