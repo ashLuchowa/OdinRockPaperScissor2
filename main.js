@@ -19,15 +19,16 @@ computerDisplay.textContent = cScore;
 mainDisplay.textContent = 'Choose your destiny';
 
 //Computer random choice [rock, paper or scissor]
-getComputerChoice = ['rock', 'paper', 'scissor'];
-
-
-//Player select [rock, paper or scissor]
+const getComputerChoice = () => {
+    const arrOfChoices = ['rock', 'paper', 'scissor'];
+    const compChoice = arrOfChoices[Math.floor(Math.random() * 3)]
+    return compChoice;
+}
 
 //Player selects rock
 rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
-    computerSelection = getComputerChoice[Math.floor(Math.random() * getComputerChoice.length)];
+    const computerSelection = getComputerChoice();
 
     if (computerSelection === 'rock') {
         winDisplay.textContent = 'It\'s a tie!';
