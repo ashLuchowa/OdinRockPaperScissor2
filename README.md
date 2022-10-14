@@ -38,3 +38,9 @@ Another go at the rock paper scissor project
 //game()
 - will play 5 rounds of playRound()
 - displays 'who won' and restart button
+
+
+# What I learned
+- Sometimes to store a variable(s), you can make a function expression and write the logic to obtain that variable
+- Then you can declare a function to execute that function expression as its parameter
+- Refer to computerSelection()

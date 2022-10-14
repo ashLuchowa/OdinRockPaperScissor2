@@ -6,16 +6,13 @@ let cScore = 0;
 const buttons = document.querySelectorAll('.main-button button');
 const mainDisplay = document.querySelector('.main-display p');
 const winDisplay = document.querySelector('.main-display h2');
-const computerDisplay = document.querySelector('.computer-display span');
-const playerDisplay = document.querySelector('.player-display span');
+
 //Target Buttons
 const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorBtn = document.getElementById('scissor-btn');
 
 //Displays
-playerDisplay.textContent = pScore;
-computerDisplay.textContent = cScore;
 mainDisplay.textContent = 'Choose your destiny';
 
 //Computer random choice [rock, paper or scissor]
@@ -29,18 +26,21 @@ const getComputerChoice = () => {
 rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
     const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
 });
 
 //Player selects paper
 paperBtn.addEventListener('click', () => {
     playerSelection = 'paper';
     const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
 });
 
 //Player selects scissor
 scissorBtn.addEventListener('click', () => {
     playerSelection = 'scissor';
     const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
 });
 
 
@@ -62,6 +62,8 @@ const playRound = (playerSelection, computerSelection) => {
     ) {
         winDisplay.textContent = 'You won!';
         mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
+        pScore++;
+        updateScore();
     }
 
     //You lost
@@ -71,6 +73,16 @@ const playRound = (playerSelection, computerSelection) => {
     ) {
         winDisplay.textContent = 'You lost!';
         mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
+        cScore++;
+        updateScore();
     }
+}
 
+
+//Update Score
+const updateScore = () => {
+    const playerDisplay = document.querySelector('.player-display span');
+    const computerDisplay = document.querySelector('.computer-display span');
+    playerDisplay.textContent = pScore;
+    computerDisplay.textContent = cScore;
 }
