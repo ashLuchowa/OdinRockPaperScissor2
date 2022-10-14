@@ -4,13 +4,13 @@ const buttons = document.querySelectorAll('.main-button button');
 const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
 const scissorBtn = document.getElementById('scissor-btn');
+const mainDisplay = document.querySelector('.main-display p');
+
+mainDisplay.textContent = 'Choose your destiny';
 
 
 //Computer random choice [rock, paper or scissor]
 getComputerChoice = ['rock', 'paper', 'scissor'];
-
-
-console.log(computerSelection);
 
 
 //Player select [rock, paper or scissor]
@@ -20,17 +20,11 @@ rockBtn.addEventListener('click', () => {
     computerSelection = getComputerChoice[Math.floor(Math.random() * getComputerChoice.length)];
 
     if (computerSelection === 'rock') {
-        console.log('It is a tie!');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. It\'s a tie!`;
     } else if (computerSelection === 'paper') {
-        console.log('You lost! Paper wraps rock');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. You lost! Paper wraps rock!`;
     } else {
-        console.log('You won! Rock breaks scissor');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. You won! Rock breaks scissor!`;
     }
 })
 //Player selects paper
@@ -39,17 +33,11 @@ paperBtn.addEventListener('click', () => {
     computerSelection = getComputerChoice[Math.floor(Math.random() * getComputerChoice.length)];
 
     if (computerSelection === 'rock') {
-        console.log('You won! Paper wraps rock');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. You won! Paper wraps rock!`;
     } else if (computerSelection === 'paper') {
-        console.log('It is a tie!');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. It\'s a tie!`;
     } else {
-        console.log('You lost! Scissor cuts paper');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. You lost! Scissor cuts paper!`;
     }
 })
 //Player selects scissor
@@ -58,64 +46,10 @@ scissorBtn.addEventListener('click', () => {
     computerSelection = getComputerChoice[Math.floor(Math.random() * getComputerChoice.length)];
 
     if (computerSelection === 'rock') {
-        console.log('You lost! Rock breaks scissor');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. You lost! Rock breaks scissor!`;
     } else if (computerSelection === 'paper') {
-        console.log('You won! Scissor cuts paper');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. You won! Scissor cuts paper!`;
     } else {
-        console.log('It is a tie');
-        console.log(`player: ${playerSelection}`);
-        console.log(`computer: ${computerSelection}`);
+        mainDisplay.textContent = `The enemy chose ${computerSelection}. It\'s a tie!`;
     }
 })
-
-
-
-
-
-
-
-// // //Play 1 round
-// let playRound = (playerSelection, computerSelection) => {
-
-
-
-//     //computer chooses rock
-//     if (computerSelection = 'rock') {
-//         if (playerSelection === 'rock') {
-//             console.log('tie');
-//         } else if (playerSelection === 'paper') {
-//            console.log('you won! Paper wraps rock');
-//         } else {
-//            console.log('You lost! Rock breaks scissor');
-//         }
-//     }
-
-//     //computer chooses paper
-//     else if(computerSelection === 'paper') {
-//         if(playerSelection === 'paper') {
-//             console.log('tie')
-//         } else if(playerSelection === 'rock') {
-//             console.log('You lost! Paper wraps rock');
-//         } else {
-//             console.log('You won! Scissor cuts paper');
-//         }
-//     }
-
-//     //computer chooses scissor
-//     else {
-//         if(playerSelection === 'scissor') {
-//             console.log('tie');
-//         } else if(playerSelection === 'rock') {
-//             console.log('You won! Rock breaks scissor');
-//         } else {
-//             console.log('You lost! Scissor cuts paper');
-//         }
-//     }
-// }
-
-
-// playRound()

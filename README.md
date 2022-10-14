@@ -15,8 +15,7 @@ Another go at the rock paper scissor project
 - getComputerChoice = computerSelection
 
 //playerSelection
-- input from pressing one of the buttons
-- shoud be case-sensitive
+- input from pressing one of the 3 buttons
 
 //playRound(playerSelection, computerSelection) {
     
