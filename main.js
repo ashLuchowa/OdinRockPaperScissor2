@@ -122,9 +122,13 @@ const updateScore = () => {
         }
     });
 
-    if (rScore > 5) {
-        alert('GAME OVER!')
-        roundDisplay.textContent = rScore;
+
+    if(rScore === 5) {
+        if(pScore >= 2) {
+            winDisplay.textContent = 'You won the game!';
+        } else {
+            winDisplay.textContent = 'You lost the game!';
+        }
     }
 
     nextRoundDisplay.appendChild(continueBtn);
