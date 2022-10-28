@@ -75,10 +75,10 @@ const playRound = (playerSelection, computerSelection) => {
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissor' && computerSelection === 'paper')
     ) {
-        winDisplay.textContent = 'You won!';
-        mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         pScore++;
         rScore++;
+        winDisplay.textContent = 'You won!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         //Disable options after playing 1 round
         for (const button of buttons) {
             button.disabled = true;
@@ -91,10 +91,10 @@ const playRound = (playerSelection, computerSelection) => {
         (playerSelection === 'paper' && computerSelection === 'scissor') ||
         (playerSelection === 'scissor' && computerSelection === 'rock')
     ) {
-        winDisplay.textContent = 'You lost!';
-        mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         cScore++;
         rScore++;
+        winDisplay.textContent = 'You lost!';
+        mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         //Disable options after playing 1 round
         for (const button of buttons) {
             button.disabled = true;
@@ -126,8 +126,10 @@ const updateScore = () => {
     if(rScore === 5) {
         if(pScore >= 2) {
             winDisplay.textContent = 'You won the game!';
+            continueBtn.textContent = 'restart';
         } else {
             winDisplay.textContent = 'You lost the game!';
+            continueBtn.textContent = 'restart';
         }
     }
 
