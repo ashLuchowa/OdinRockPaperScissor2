@@ -32,6 +32,8 @@ continueBtn.classList.add('continue-btn');
 
 //Player selects rock
 rockBtn.addEventListener('click', () => {
+    paperBtn.classList.add('non-highlight-btn');
+    scissorBtn.classList.add('non-highlight-btn');
     playerSelection = 'rock';
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
@@ -39,6 +41,8 @@ rockBtn.addEventListener('click', () => {
 
 //Player selects paper
 paperBtn.addEventListener('click', () => {
+    rockBtn.classList.add('non-highlight-btn');
+    scissorBtn.classList.add('non-highlight-btn');
     playerSelection = 'paper';
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
@@ -46,6 +50,8 @@ paperBtn.addEventListener('click', () => {
 
 //Player selects scissor
 scissorBtn.addEventListener('click', () => {
+    paperBtn.classList.add('non-highlight-btn');
+    rockBtn.classList.add('non-highlight-btn');
     playerSelection = 'scissor';
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
@@ -118,6 +124,9 @@ const updateScore = () => {
         for (const button of buttons) {
             button.disabled = false;
         }
+        rockBtn.classList.remove('non-highlight-btn');
+        paperBtn.classList.remove('non-highlight-btn');
+        scissorBtn.classList.remove('non-highlight-btn');
     });
 
 

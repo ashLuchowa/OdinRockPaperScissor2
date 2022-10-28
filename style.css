@@ -89,6 +89,10 @@ button:hover {
     color: red;
 }
 
+.non-highlight-btn {
+    color: #585858;
+}
+
 /*---------- DISPLAY SECTION ----------*/
 .main-display {
     display: flex;
