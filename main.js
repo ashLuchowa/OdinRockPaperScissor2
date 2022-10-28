@@ -23,6 +23,13 @@ const getComputerChoice = () => {
     return compChoice;
 }
 
+//Continue Button
+const nextRoundDisplay = document.querySelector('.next-round');
+const continueBtn = document.createElement('button');
+continueBtn.textContent = 'next round';
+continueBtn.classList.add('continue-btn');
+
+
 //Player selects rock
 rockBtn.addEventListener('click', () => {
     playerSelection = 'rock';
@@ -86,15 +93,22 @@ const playRound = (playerSelection, computerSelection) => {
 
 //Update Score
 const updateScore = () => {
-    const playerDisplay = document.querySelector('.player-display span');
-    const computerDisplay = document.querySelector('.computer-display span');
-    const roundDisplay = document.querySelector('.round-display span');
-    playerDisplay.textContent = pScore;
-    computerDisplay.textContent = cScore;
-    roundDisplay.textContent = rScore+1;
+    continueBtn.addEventListener('click', () => {
+        const playerDisplay = document.querySelector('.player-display span');
+        const computerDisplay = document.querySelector('.computer-display span');
+        const roundDisplay = document.querySelector('.round-display span');
+        playerDisplay.textContent = pScore;
+        computerDisplay.textContent = cScore;
+        roundDisplay.textContent = rScore + 1;
+        winDisplay.textContent = '';
+        mainDisplay.textContent = 'Choose your destiny';
+        nextRoundDisplay.textContent = '';
+    });
 
-    if(rScore === 5) {
-        alert('GAME OVER BITCH!')
+    if (rScore > 5) {
+        alert('GAME OVER!')
         roundDisplay.textContent = rScore;
     }
+
+    nextRoundDisplay.appendChild(continueBtn);
 }

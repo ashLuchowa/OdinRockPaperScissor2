@@ -84,6 +84,11 @@ button:hover {
     color: #000000;
 }
 
+.continue-btn {
+    margin-top: 10px;
+    color: red;
+}
+
 /*---------- DISPLAY SECTION ----------*/
 .main-display {
     display: flex;
@@ -103,4 +108,8 @@ button:hover {
 .main-display p {
     color: #ffffff;
     font-size: 20px;
+}
+
+.main-display h2, p, .next-round {
+    margin-bottom: 10px;
 }
