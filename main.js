@@ -123,12 +123,15 @@ const updateScore = () => {
     });
 
 
-    if(rScore === 5) {
-        if(pScore >= 2) {
+    if (rScore === 5) {
+        if (pScore >= 2) {
             winDisplay.textContent = 'You won the game!';
             continueBtn.textContent = 'restart';
-        } else {
+        } else if (cScore >= 2) {
             winDisplay.textContent = 'You lost the game!';
+            continueBtn.textContent = 'restart';
+        } else {
+            winDisplay.textContent = 'Nobody won!';
             continueBtn.textContent = 'restart';
         }
     }
