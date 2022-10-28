@@ -66,7 +66,6 @@ const playRound = (playerSelection, computerSelection) => {
         for (const button of buttons) {
             button.disabled = true;
         }
-
         updateScore();
     }
 
@@ -99,7 +98,6 @@ const playRound = (playerSelection, computerSelection) => {
         for (const button of buttons) {
             button.disabled = true;
         }
-
         updateScore();
     }
 }
@@ -123,7 +121,7 @@ const updateScore = () => {
     });
 
 
-    if (rScore === 5) {
+    if (rScore > 4) {
         if (pScore >= 2) {
             winDisplay.textContent = 'You won the game!';
             continueBtn.textContent = 'restart';
@@ -134,7 +132,13 @@ const updateScore = () => {
             winDisplay.textContent = 'Nobody won!';
             continueBtn.textContent = 'restart';
         }
+        continueBtn.addEventListener('click', restartGame);
     }
-
     nextRoundDisplay.appendChild(continueBtn);
+}
+
+
+//Restart the game
+function restartGame() {
+    window.location.reload();
 }
