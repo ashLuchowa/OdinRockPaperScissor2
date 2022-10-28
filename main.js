@@ -62,6 +62,11 @@ const playRound = (playerSelection, computerSelection) => {
         winDisplay.textContent = 'It\'s a tie!';
         mainDisplay.textContent = `The enemy chose ${computerSelection} too.`;
         rScore++;
+        //Disable options after playing 1 round
+        for (const button of buttons) {
+            button.disabled = true;
+        }
+
         updateScore();
     }
 
@@ -74,6 +79,10 @@ const playRound = (playerSelection, computerSelection) => {
         mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         pScore++;
         rScore++;
+        //Disable options after playing 1 round
+        for (const button of buttons) {
+            button.disabled = true;
+        }
         updateScore();
     }
 
@@ -86,6 +95,11 @@ const playRound = (playerSelection, computerSelection) => {
         mainDisplay.textContent = `The enemy chose ${computerSelection}.`;
         cScore++;
         rScore++;
+        //Disable options after playing 1 round
+        for (const button of buttons) {
+            button.disabled = true;
+        }
+
         updateScore();
     }
 }
@@ -103,6 +117,9 @@ const updateScore = () => {
         winDisplay.textContent = '';
         mainDisplay.textContent = 'Choose your destiny';
         nextRoundDisplay.textContent = '';
+        for (const button of buttons) {
+            button.disabled = false;
+        }
     });
 
     if (rScore > 5) {
